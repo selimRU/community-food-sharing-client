@@ -2,9 +2,21 @@
 
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 import { Link } from 'react-router-dom';
+import { BiLogoGoogle } from 'react-icons/bi';
+import UseAuth from '../hooks/UseAuth';
 
 
 const LogIn = () => {
+    const { loginWithGoogle, user } = UseAuth()
+
+    const handleGoogleLogin = () => {
+        loginWithGoogle()
+            .then(res => {
+                console.log(res.user);
+            })
+    }
+
+
     return (
         <div className=' max-w-5xl mx-auto flex items-center border justify-between bg-slate-200 p-5 my-10 rounded-md'>
             <div className=' w-full md:w-[40%] lg:w-[40%]'>
@@ -13,19 +25,13 @@ const LogIn = () => {
                         <div className="mb-2 block">
                             <Label htmlFor="email2" value="Your email" />
                         </div>
-                        <TextInput id="email2" type="email" placeholder="name@flowbite.com" required shadow />
+                        <TextInput id="email2" type="email" placeholder="Your email" required shadow />
                     </div>
                     <div>
                         <div className="mb-2 block">
                             <Label htmlFor="password2" value="Your password" />
                         </div>
-                        <TextInput id="password2" type="password" required shadow />
-                    </div>
-                    <div>
-                        <div className="mb-2 block">
-                            <Label htmlFor="repeat-password" value="Repeat password" />
-                        </div>
-                        <TextInput id="repeat-password" type="password" required shadow />
+                        <TextInput id="password2" type="password" placeholder="Your password" required shadow />
                     </div>
                     <div className="flex items-center gap-2">
                         <Checkbox id="agree" />
@@ -36,9 +42,11 @@ const LogIn = () => {
                             </Link>
                         </Label>
                     </div>
-                    <Button type="submit">Log In</Button>
                     <Button outline gradientDuoTone="purpleToBlue">
-                        Purple to Blue
+                        Log In
+                    </Button>
+                    <Button onClick={handleGoogleLogin} outline gradientDuoTone="purpleToBlue">
+                        <BiLogoGoogle className=' text-blue-700 text-xl ' /> JOIN WITH GOOGLE
                     </Button>
                     <p className=' text-center'>New here? <Link to={'/register'}><span className=' text-blue-500 font-semibold underline ml-5'>Register</span></Link></p>
                 </form>
