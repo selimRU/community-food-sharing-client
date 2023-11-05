@@ -30,7 +30,7 @@ const Nav = () => {
                     <NavLink to="/" >
                         Home
                     </NavLink>
-                    <NavLink to="/availableFoods">Availablen Foods</NavLink>
+                    <NavLink to="/availableFoods">Available Foods</NavLink>
                     <NavLink to="/addFood">Add Food</NavLink>
                     <NavLink to="/manageMyFoods">Manage My Foods</NavLink>
                     <NavLink to="myFoodRequest">My Foods Request</NavLink>

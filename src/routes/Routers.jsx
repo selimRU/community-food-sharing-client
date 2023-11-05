@@ -4,12 +4,12 @@ import About from "../pages/About";
 import Main from "../components/MainLayout/Main";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import AddFood from "../pages/AddFood";
-import AvailableFoods from "../pages/AvailableFoods";
 import ManageMyFood from "../pages/ManageMyFood";
 import MyFoodRequest from "../pages/MyFoodRequest";
 import LogIn from "../pages/LogIn";
 import Register from "../pages/Register";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import AvailableFoods from "../pages/AvailableFoods/AvailableFoods";
 
 const router = createBrowserRouter([
     {

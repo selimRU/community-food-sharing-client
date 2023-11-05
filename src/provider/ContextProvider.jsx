@@ -10,6 +10,10 @@ const ContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(true)
     const [featureFoods, setFeatureFoods] = useState([])
 
+
+    // available foods
+   
+
     // faetureFoods
     useEffect(() => {
         axios.get('http://localhost:5000/api/v1/featureFood')
@@ -62,7 +66,7 @@ const ContextProvider = ({ children }) => {
         logOut,
         user,
         loading,
-        featureFoods
+        featureFoods,
     }
     return (
         <Context.Provider value={values}>
