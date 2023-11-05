@@ -17,26 +17,12 @@ const Nav = () => {
                 </div>
             </Navbar.Brand>
             <div className="flex md:order-2 gap-1 items-center ">
-                <Avatar className=' mr-2 md:mr-0 lg:mr-0' alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-                {user ? <button onClick={handleLogOut} className=' rounded-md bg-blue-300 px-1 md:px-2 lg:px-3 py-1' >Log Out</button> :
+                <div className=' flex flex-row md:flex-col lg:flex-row-reverse gap-2 items-center mx-1'>
+                    <img className=' w-8 h-8 rounded-full' src={user?.photoURL} />
+                    <p className=' text-xs lg:text-base'>{user?.displayName}</p>
+                </div>
+                {user ? <button onClick={handleLogOut} className=' text-xs lg:text-lg md:text-xs rounded-md bg-blue-300 px-2 md:px-2 lg:px-3 py-2' >Log Out</button> :
                     <Link to={'/logIn'}><button color="blue">Log In</button></Link>}
-                {/* <Dropdown
-                    arrowIcon={false}
-                    inline
-                    label={
-                        <Avatar className=' mr-2 md:mr-0 lg:mr-0' alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-                    }
-                >
-                    <Dropdown.Header>
-                        <span className="block text-sm">Bonnie Green</span>
-                        <span className="block truncate text-sm font-medium">name@flowbite.com</span>
-                    </Dropdown.Header>
-                    <Dropdown.Item>Dashboard</Dropdown.Item>
-                    <Dropdown.Item>Settings</Dropdown.Item>
-                    <Dropdown.Item>Earnings</Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.Item>Sign out</Dropdown.Item>
-                </Dropdown> */}
                 <Navbar.Toggle />
             </div>
             <Navbar.Collapse>

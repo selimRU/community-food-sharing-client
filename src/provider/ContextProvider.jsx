@@ -1,12 +1,23 @@
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { auth } from "../firebaseConfig/FirbaseConfig";
+import axios from "axios";
 
 const provider = new GoogleAuthProvider();
 export const Context = createContext()
 const ContextProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [featureFoods, setFeatureFoods] = useState([])
+
+    // faetureFoods
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/v1/featureFood')
+            .then(res => {
+                console.log(res.data);
+                setFeatureFoods(res.data)
+            })
+    }, [])
 
     // google login
     const loginWithGoogle = () => {
@@ -51,6 +62,7 @@ const ContextProvider = ({ children }) => {
         logOut,
         user,
         loading,
+        featureFoods
     }
     return (
         <Context.Provider value={values}>

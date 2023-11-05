@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import UseAuth from '../hooks/UseAuth';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { reload } from 'firebase/auth';
 
 
 const Register = () => {
@@ -34,11 +35,9 @@ const Register = () => {
             .then(res => {
                 console.log(res.user);
                 profileUpdate(name, image)
-                    .then(res => {
-                    })
+                    .then()
                 toast('User created succesfully')
-            }).catch(error => {
-                toast(error.message)
+                window.location.reload()
             })
             .catch(error => {
                 toast(error.message)

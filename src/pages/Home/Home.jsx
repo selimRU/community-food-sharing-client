@@ -1,9 +1,13 @@
+import Bannar from "./Bannar";
+import FeatureFoods from "./FeatureFoods";
 
 
 const Home = () => {
     return (
-        <div className=" h-screen">
-            <h3>Home</h3>
+        <div>
+            <Bannar></Bannar>
+            <FeatureFoods />
+            <h3>fcfd</h3>
         </div>
     );
 };
