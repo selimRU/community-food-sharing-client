@@ -1,12 +1,16 @@
 import { Card } from 'flowbite-react';
 import { useNavigate } from 'react-router-dom';
 
-const AvailableFoodsCard = ({ food }) => {
+const AvailableFoodsCard = ({ food, soring, setSorting }) => {
     const navigate = useNavigate()
     const { _id, Food_Image, Additional_Notes, Donator, Expired_Time, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = food;
 
     const handleDetails = () => {
         navigate(`/availableFoodDetails/${_id}`)
+    }
+
+    const handleSorting = () => {
+
     }
     return (
         <Card
