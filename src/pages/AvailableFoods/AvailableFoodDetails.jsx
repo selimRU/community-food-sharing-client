@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import { Button, Checkbox, Label, Modal, TextInput } from 'flowbite-react';
 import { useState } from 'react';
 import RequestForm from "./RequestForm";
-import axios from "axios";
+
 
 const AvailableFoodDetails = () => {
     const availableFood = useLoaderData()
@@ -21,24 +21,6 @@ const AvailableFoodDetails = () => {
         setEmail('');
     }
 
-    const food = {
-        Food_Image: Food_Image,
-        Additional_Notes: Additional_Notes,
-        Donator: Donator,
-        Expired_Time: Expired_Time,
-        Food_Name: Food_Name,
-        Food_Quantity: Food_Quantity,
-        Food_Status: Food_Status,
-        Pickup_Location: Pickup_Location,
-        Food_id: _id,
-    }
-    const handleFoodRequest = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:5000/api/v1/requestedFood', food)
-            .then(res => {
-                console.log(res.data.insertedId);
-            })
-    }
     return (
         <Card
             className="max-w-4xl mx-auto my-10"
@@ -90,7 +72,7 @@ const AvailableFoodDetails = () => {
                         Food_Quantity={Food_Quantity}
                         Food_Status={Food_Status}
                         Pickup_Location={Pickup_Location}
-                        handleFoodRequest={handleFoodRequest}
+                        _id={_id}
                     ></RequestForm>
                 </Modal.Body>
             </Modal>

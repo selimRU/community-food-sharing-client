@@ -9,6 +9,7 @@ const ContextProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const [featureFoods, setFeatureFoods] = useState([])
+    const [requestFoods, setRequestFoods] = useState([])
 
 
     // available foods
@@ -20,6 +21,15 @@ const ContextProvider = ({ children }) => {
             .then(res => {
                 console.log(res.data);
                 setFeatureFoods(res.data)
+            })
+    }, [])
+
+// requested foods
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/v1/requestedFoodDisplayed')
+            .then(res => {
+                console.log(res.data);
+                setRequestFoods(res.data)
             })
     }, [])
 
@@ -67,6 +77,7 @@ const ContextProvider = ({ children }) => {
         user,
         loading,
         featureFoods,
+        requestFoods
     }
     return (
         <Context.Provider value={values}>

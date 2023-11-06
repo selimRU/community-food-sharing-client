@@ -6,7 +6,7 @@ import FeatureFoodsCard from "./FeatureFoodsCard";
 const FeatureFoods = () => {
     const { featureFoods } = UseAuth()
     return (
-        <div className="max-w-6xl mx-auto my-10">
+        <div className="max-w-7xl mx-auto my-10">
             <h3 className=" text-4xl rancho text-center font-semibold text-blue-400 border-b-2 border-blue-300 py-3">Featured Foods</h3>
             <div className=" grid md:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-5 my-10 ">
                 {

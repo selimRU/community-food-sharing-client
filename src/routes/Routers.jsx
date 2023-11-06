@@ -36,7 +36,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myFoodRequest',
-                element: <PrivateRoutes ><MyFoodRequest /></PrivateRoutes >
+                element: <PrivateRoutes ><MyFoodRequest /></PrivateRoutes >,
+                loader: () => fetch('http://localhost:5000/api/v1/requestedFoodDisplayed')
             },
             {
                 path: '/availableFoodDetails/:id',
