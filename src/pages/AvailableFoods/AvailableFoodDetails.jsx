@@ -11,7 +11,7 @@ const AvailableFoodDetails = () => {
     const availableFood = useLoaderData()
 
     console.log(availableFood);
-    const { _id, Food_Image, Additional_Notes, Donator, Expired_Time, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = availableFood;
+    const { _id, Food_Image, Additional_Notes, Donator, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = availableFood;
 
     const [openModal, setOpenModal] = useState(false);
     const [email, setEmail] = useState('');
@@ -35,8 +35,8 @@ const AvailableFoodDetails = () => {
                 <p className=' ralway text-start'>{Food_Quantity}</p>
             </div>
             <div className="flex items-center justify-between">
-                <span className=" font-semibold ralway text-gray-900 dark:text-white">Expired_Time</span>
-                <p className=' ralway text-start'>{Expired_Time}</p>
+                <span className=" font-semibold ralway text-gray-900 dark:text-white">Expired_Date</span>
+                <p className=' ralway text-start'>{Expired_Date}</p>
             </div>
             <div className="flex items-center justify-between">
                 <span className=" font-semibold ralway text-gray-900 dark:text-white">Food_Status</span>
@@ -67,7 +67,7 @@ const AvailableFoodDetails = () => {
                         Food_Image={Food_Image}
                         Additional_Notes={Additional_Notes}
                         Donator={Donator}
-                        Expired_Time={Expired_Time}
+                        Expired_Date={Expired_Date}
                         Food_Name={Food_Name}
                         Food_Quantity={Food_Quantity}
                         Food_Status={Food_Status}

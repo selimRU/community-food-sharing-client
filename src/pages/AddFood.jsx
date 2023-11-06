@@ -4,21 +4,31 @@ import axios from 'axios';
 import { Button, Label, TextInput } from 'flowbite-react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import UseAuth from '../hooks/UseAuth';
 
 const AddFood = () => {
     const [foodName, setFoodName] = useState('')
     const [foodImage, setFoodImage] = useState('')
     const [foodQuantity, setFoodQuantity] = useState('')
-    const [email, setEmail] = useState('')
-    const [donatorName, setDonatorName] = useState('')
-    const [donatorImage, setDonatorImage] = useState('')
+    const [foodStatus, setFoodStatus] = useState('Available')
+    // const [donatorName, setDonatorName] = useState('')
+    // const [donatorImage, setDonatorImage] = useState('')
     const [expiredTime, setExpiredTime] = useState('')
     const [pickLocation, setPickLocation] = useState('')
     const [additionalNotes, setAdditionalNotes] = useState('')
+
+    const { user } = UseAuth()
+    console.log(user);
+    const donatorName = user?.displayName
+    const donatorImage = user?.photoURL
+
+    const email = user?.email
+
     const newFood = {
         foodName,
         foodImage,
         foodQuantity,
+        foodStatus,
         email,
         donatorImage,
         donatorName,
@@ -67,7 +77,7 @@ const AddFood = () => {
                         </div>
                         <div>
                             <div className="mb-2 block">
-                                <Label htmlFor="time" value="Expired time" />
+                                <Label htmlFor="time" value="Expired date" />
                             </div>
                             <TextInput onBlur={(e) => { setExpiredTime(e.target.value) }} id="time" type="date" required />
                         </div>
@@ -75,20 +85,26 @@ const AddFood = () => {
                             <div className="mb-2 block">
                                 <Label htmlFor="donator's name" value="Donator's name" />
                             </div>
-                            <TextInput onBlur={(e) => { setDonatorName(e.target.value) }} id="donator's name" type="text" required />
+                            <TextInput defaultValue={donatorName} id="donator's name" type="text" readOnly />
                         </div>
                         <div>
                             <div className="mb-2 block">
-                                <Label htmlFor="donator's image" value="Donator's image" />
+                                <Label htmlFor="food status" value="Food status" />
                             </div>
-                            <TextInput onBlur={(e) => { setDonatorImage(e.target.value) }} id="donator image" type="text" required />
+                            <TextInput defaultValue={foodStatus} id="status" type="text" readOnly />
                         </div>
                         <div>
                             <div className="mb-2 block">
                                 <Label htmlFor="email" value="Donator's email" />
                             </div>
-                            <TextInput onBlur={(e) => { setEmail(e.target.value) }} id="email1" type="email" placeholder="Donator's email" required />
+                            <TextInput defaultValue={email} id="email1" type="email" placeholder="Donator's email" readOnly />
                         </div>
+                    </div>
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="image2" value="Donator's image" />
+                        </div>
+                        <TextInput defaultValue={donatorImage} id="image2" type="text" placeholder="Donator's image" readOnly />
                     </div>
                     <div>
                         <div className="mb-2 block">

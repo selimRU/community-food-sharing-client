@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const AvailableFoodsCard = ({ food, soring, setSorting }) => {
     const navigate = useNavigate()
-    const { _id, Food_Image, Additional_Notes, Donator, Expired_Time, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = food;
+    const { _id, Food_Image, Additional_Notes, Donator, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = food;
 
     const handleDetails = () => {
         navigate(`/availableFoodDetails/${_id}`)
@@ -26,8 +26,8 @@ const AvailableFoodsCard = ({ food, soring, setSorting }) => {
                 <p className=' ralway text-start'>{Food_Quantity}</p>
             </div>
             <div className="flex items-center justify-between">
-                <span className=" font-semibold ralway text-gray-900 dark:text-white">Expired_Time</span>
-                <p className=' ralway text-start'>{Expired_Time}</p>
+                <span className=" font-semibold ralway text-gray-900 dark:text-white">Expired_Date</span>
+                <p className=' ralway text-start'>{Expired_Date}</p>
             </div>
             <div className="flex items-center justify-between">
                 <span className=" font-semibold ralway text-gray-900 dark:text-white">Food_Status</span>

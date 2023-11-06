@@ -3,8 +3,8 @@ import { Button, Label, TextInput } from 'flowbite-react';
 import axios from "axios";
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import { setDriver } from 'localforage';
-const RequestForm = ({ _id, Food_Image, Additional_Notes, Donator, Expired_Time, Food_Name, Food_Quantity, Food_Status, Pickup_Location }) => {
+
+const RequestForm = ({ _id, Food_Image, Additional_Notes, Donator, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location }) => {
     const [date, setDate] = useState(new Date())
     const [money, setMoney] = useState('')
     const { user } = UseAuth()
@@ -20,25 +20,11 @@ const RequestForm = ({ _id, Food_Image, Additional_Notes, Donator, Expired_Time,
         Donator_Name: Donator?.Name,
         User_Email: email,
         Pickup_Location: Pickup_Location,
-        Expired_Date: Expired_Time,
+        Expired_Date: Expired_Date,
         Additional_Notes: Additional_Notes,
         Donated_Money: money,
         Requst_Date: date,
     }
-    // ○ Food Name(Not editable)
-    // ○ Food Image(Not editable)
-    // ○ Food Id(Not editable)
-    // ○ Food Donator email(Not editable)
-    // ○ Food Donator Name(not editable)
-    // ○ User email(LoggedIn user, Not editable)
-    // ○ Request Date(current time not editable)
-    // ○ Pickup Location(not editable)
-    // ○ Expire Date(not editable)
-    // ○ Additional Notes(editable
-    // ○ Donation Money(editable)
-    // ○ Request Button
-
-
 
     const handleFoodRequest = (e) => {
     e.preventDefault()
@@ -80,9 +66,9 @@ return (
                     </div>
                     <div>
                         <div className="mb-2 block">
-                            <Label htmlFor="time" value="Expired time" />
+                            <Label htmlFor="time" value="Expired date" />
                         </div>
-                        <TextInput defaultValue={Expired_Time} id="time" type="text" required readOnly />
+                        <TextInput defaultValue={Expired_Date} id="time" type="text" required readOnly />
                     </div>
                     <div>
                         <div className="mb-2 block">
