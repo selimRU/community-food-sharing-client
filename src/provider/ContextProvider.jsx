@@ -9,47 +9,33 @@ const ContextProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const [featureFoods, setFeatureFoods] = useState([])
-    const [requestFoods, setRequestFoods] = useState([])
-    const [count, setCount] = useState('')
-    const [manageFoods, setManageFoods] = useState([])
 
+    // const [manageFoods, setManageFoods] = useState([])
+    const [count, setCount] = useState(0)
 
     // available foods count
     useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/availableFoodsCount')
+        axios.get('http://localhost:5000/api/v1/count/availableFoodsCount')
             .then(res => {
-                console.log(res.data);
-                setCount(res.data)
-            })
-    }, [])
+                console.log(res.data.count);
+                if (res.data.count) {
+                    setCount(res.data.count)
+                }
 
-    // available foods
-    useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/availableFoods')
-            .then(res => {
-                console.log(res.data);
-                setManageFoods(res.data)
             })
     }, [])
 
     // faetureFoods
-    
+
     useEffect(() => {
         axios.get('http://localhost:5000/api/v1/featureFood')
             .then(res => {
-                console.log(res.data);
                 setFeatureFoods(res.data)
             })
     }, [])
 
-// requested foods
-    useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/requestedFoodDisplayed')
-            .then(res => {
-                console.log(res.data);
-                setRequestFoods(res.data)
-            })
-    }, [])
+    // requested foods
+
 
     // google login
     const loginWithGoogle = () => {
@@ -95,9 +81,7 @@ const ContextProvider = ({ children }) => {
         user,
         loading,
         featureFoods,
-        requestFoods,
-        count,
-        manageFoods
+        count
     }
     return (
         <Context.Provider value={values}>

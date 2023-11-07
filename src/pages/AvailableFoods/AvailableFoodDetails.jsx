@@ -14,11 +14,10 @@ const AvailableFoodDetails = () => {
     const { _id, Food_Image, Additional_Notes, Donator, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = availableFood;
 
     const [openModal, setOpenModal] = useState(false);
-    const [email, setEmail] = useState('');
 
     function onCloseModal() {
         setOpenModal(false);
-        setEmail('');
+
     }
 
     return (

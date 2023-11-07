@@ -6,42 +6,33 @@ import { RotatingLines } from "react-loader-spinner";
 
 
 const AvailableFoods = () => {
-    const { count, loading } = UseAuth()
-    console.log(count);
+    const { loading, count } = UseAuth()
     const [availableFoods, setAvailableFoods] = useState([])
-    console.log(availableFoods);
     const [searchResult, setSearchResult] = useState('')
     const [notFound, setNotFound] = useState('')
     const [pageNumber, setPageNumber] = useState(0)
     const [size, setSize] = useState(6)
     const [sortOrder, setSortOrder] = useState('asc');
 
-
-    const sortedDateLowToHigh = [...availableFoods]?.sort((a, b) => new Date(a.Expired_Date) - new Date(b.Expired_Date))
-    console.log(sortedDateLowToHigh);
-    const sortedDateHighToLow = [...availableFoods]?.sort((a, b) => new Date(b.Expired_Date) - new Date(a.Expired_Date))
-    console.log(sortedDateHighToLow);
-
-    // const sortedData = [...availableFoods].sort((a, b) => {
-    //     const dateA = new Date(a.Expired_Date);
-    //     const dateB = new Date(b.Expired_Date);
-
-
-
-    //     const handleSorting = () => {
-    // const sortedFood = [...availableFoods]
-    //     }
-
-    // console.log(pageNumber);
-    // console.log(size);
-    // const finalCount 
-    const totalPages = parseInt(Math.ceil(count?.count / size))
+    const totalPages = Math.ceil(count/ size)
     console.log(totalPages);
 
-    // low to high sort
-    const handleLowToHigh = () => {
-        setAvailableFoods(sortedDateLowToHigh)
-    }
+    console.log(count);
+
+    // available foods
+    useEffect(() => {
+        axios.get(`http://localhost:5000/api/v1/availableFoods?page=${pageNumber}&size=${size}}`)
+            .then(res => {
+                console.log(res.data);
+                setAvailableFoods(res.data)
+            })
+    }, [pageNumber, size])
+
+    const sortedDateLowToHigh = [...availableFoods]?.sort((a, b) => new Date(a.Expired_Date) - new Date(b.Expired_Date))
+    // console.log(sortedDateLowToHigh);
+    const sortedDateHighToLow = [...availableFoods]?.sort((a, b) => new Date(b.Expired_Date) - new Date(a.Expired_Date))
+    // console.log(sortedDateHighToLow);
+
     const handleSort = (e) => {
         if (sortOrder === 'asc') {
             setAvailableFoods(sortedDateHighToLow)
@@ -51,10 +42,9 @@ const AvailableFoods = () => {
         setSortOrder(e.target.value)
     }
 
-    // high to low sort
-    const handleHighToLow = () => {
-        setAvailableFoods(sortedDateHighToLow)
-    }
+
+    const { user } = UseAuth()
+
     // handle page set
 
     const handleSearchFoods = () => {
@@ -77,12 +67,7 @@ const AvailableFoods = () => {
         }
         window.location.reset()
     }
-    useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/availableFoods?page=${pageNumber}&size=${size}`)
-            .then(res => {
-                setAvailableFoods(res.data)
-            })
-    }, [pageNumber, size])
+
     return (
         <div className="max-w-6xl mx-auto my-10">
             <label className=" flex flex-row justify-end items-center">
