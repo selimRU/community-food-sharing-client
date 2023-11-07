@@ -25,16 +25,16 @@ const AddFood = () => {
     const email = user?.email
 
     const newFood = {
-        foodName,
-        foodImage,
-        foodQuantity,
-        foodStatus,
-        email,
-        donatorImage,
-        donatorName,
-        expiredTime,
-        pickLocation,
-        additionalNotes,
+        Food_Name: foodName,
+        Food_Image: foodImage,
+        Food_Quantity: foodQuantity,
+        Food_Status: foodStatus,
+        Donator_Email: email,
+        Donator_Image: donatorImage,
+        Donator_Name: donatorName,
+        Expired_Date: expiredTime,
+        Pickup_Location: pickLocation,
+        Additional_Notes: additionalNotes,
     }
     const handleAddFood = (e) => {
         e.preventDefault()

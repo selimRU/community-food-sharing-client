@@ -14,12 +14,19 @@ const AvailableFoods = () => {
     const [notFound, setNotFound] = useState('')
     const [pageNumber, setPageNumber] = useState(0)
     const [size, setSize] = useState(6)
-    const [sorting, setSorting] = useState()
+    const [sortOrder, setSortOrder] = useState('asc');
 
-    useEffect(() => {
-        const sortedDate = availableFoods.sort((a, b) => new Date(a.Expired_Date) - new Date(b.Expired_Date))
-        console.log(sortedDate);
-    }, [])
+
+    const sortedDateLowToHigh = [...availableFoods]?.sort((a, b) => new Date(a.Expired_Date) - new Date(b.Expired_Date))
+    console.log(sortedDateLowToHigh);
+    const sortedDateHighToLow = [...availableFoods]?.sort((a, b) => new Date(b.Expired_Date) - new Date(a.Expired_Date))
+    console.log(sortedDateHighToLow);
+
+    // const sortedData = [...availableFoods].sort((a, b) => {
+    //     const dateA = new Date(a.Expired_Date);
+    //     const dateB = new Date(b.Expired_Date);
+
+
 
     //     const handleSorting = () => {
     // const sortedFood = [...availableFoods]
@@ -31,6 +38,23 @@ const AvailableFoods = () => {
     const totalPages = parseInt(Math.ceil(count?.count / size))
     console.log(totalPages);
 
+    // low to high sort
+    const handleLowToHigh = () => {
+        setAvailableFoods(sortedDateLowToHigh)
+    }
+    const handleSort = (e) => {
+        if (sortOrder === 'asc') {
+            setAvailableFoods(sortedDateHighToLow)
+        } else {
+            setAvailableFoods(sortedDateLowToHigh)
+        }
+        setSortOrder(e.target.value)
+    }
+
+    // high to low sort
+    const handleHighToLow = () => {
+        setAvailableFoods(sortedDateHighToLow)
+    }
     // handle page set
 
     const handleSearchFoods = () => {
@@ -61,13 +85,13 @@ const AvailableFoods = () => {
     }, [pageNumber, size])
     return (
         <div className="max-w-6xl mx-auto my-10">
-            {/* <label>
-                Sort Order:
-                <select value={sortOrder} onChange={handleSortOrderChange}>
-                    <option value="ascending">Ascending</option>
-                    <option value="descending">Descending</option>
+            <label className=" flex flex-row justify-end items-center">
+                <span className="ralway">Sort Order :</span>
+                <select className="border-blue-300 ml-1" value={sortOrder} onChange={handleSort}>
+                    <option className="raleway" value="asc">Ascending</option>
+                    <option className="raleway" value="desc">Descending</option>
                 </select>
-            </label> */}
+            </label>
             <div className=" flex flex-col items-center gap-3 md:gap-0 lg:gap-0 md:flex-row lg:flex-row justify-center my-5">
                 <input onBlur={(e) => setSearchResult(e.target.value)} className=" w-[40%] py-[11px] border-blue-300 text-base font-light " type="text" placeholder="Search foods here" placeholder-glow name="" id="" />
                 <button onClick={handleSearchFoods} className=" rounded-md md:rounded-none lg:rounded-none  md:rounded-r-md lg:rounded-r-md bg-blue-500 px-8 py-3 hover:bg-blue-600 hover:text-white">Search</button>
@@ -79,12 +103,10 @@ const AvailableFoods = () => {
                     availableFoods?.map(food => <AvailableFoodsCard
                         key={food._id}
                         food={food}
-                        sorting={sorting}
-                        setSorting={setSorting}
                     ></AvailableFoodsCard>)
                 }
             </div>
-            <div className="flex justify-center">
+            <div className="flex flex-col md:flex-row lg:flex-row justify-center">
                 {
                     loading ? <RotatingLines
                         strokeColor="grey"

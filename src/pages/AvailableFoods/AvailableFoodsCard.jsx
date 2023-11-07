@@ -3,15 +3,12 @@ import { useNavigate } from 'react-router-dom';
 
 const AvailableFoodsCard = ({ food, soring, setSorting }) => {
     const navigate = useNavigate()
-    const { _id, Food_Image, Additional_Notes, Donator, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = food;
+    const { _id, Food_Image, Additional_Notes, Donator_name,Donator_Image, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = food;
 
     const handleDetails = () => {
         navigate(`/availableFoodDetails/${_id}`)
     }
 
-    const handleSorting = () => {
-
-    }
     return (
         <Card
             className="max-w-sm"
@@ -39,11 +36,11 @@ const AvailableFoodsCard = ({ food, soring, setSorting }) => {
             </div>
             <div className="flex items-center justify-between">
                 <span className=" font-semibold ralway text-gray-900 dark:text-white">Donator's name</span>
-                <p className=' ralway text-start'>{Donator.Name}</p>
+                <p className=' ralway text-start'>{Donator_name}</p>
             </div>
             <div className="flex items-center justify-between">
                 <span className=" font-semibold ralway text-gray-900 dark:text-white">Donator's image</span>
-                <img className=' w-[50px] h-[50px] rounded-full' src={Donator.Image} alt="" />
+                <img className=' w-[50px] h-[50px] rounded-full' src={Donator_Image} alt="" />
             </div>
             <div className=' bg-blue-200 py-5 rounded-md'>
                 <p className=" font-semibold ralway text-gray-900 dark:text-white text-center">Additional_Notes</p>

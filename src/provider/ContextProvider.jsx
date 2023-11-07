@@ -11,6 +11,7 @@ const ContextProvider = ({ children }) => {
     const [featureFoods, setFeatureFoods] = useState([])
     const [requestFoods, setRequestFoods] = useState([])
     const [count, setCount] = useState('')
+    const [manageFoods, setManageFoods] = useState([])
 
 
     // available foods count
@@ -19,6 +20,15 @@ const ContextProvider = ({ children }) => {
             .then(res => {
                 console.log(res.data);
                 setCount(res.data)
+            })
+    }, [])
+
+    // available foods
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/v1/availableFoods')
+            .then(res => {
+                console.log(res.data);
+                setManageFoods(res.data)
             })
     }, [])
 
@@ -86,7 +96,8 @@ const ContextProvider = ({ children }) => {
         loading,
         featureFoods,
         requestFoods,
-        count
+        count,
+        manageFoods
     }
     return (
         <Context.Provider value={values}>
