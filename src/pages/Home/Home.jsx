@@ -7,7 +7,6 @@ const Home = () => {
         <div>
             <Bannar></Bannar>
             <FeatureFoods />
-            <h3>fcfd</h3>
         </div>
     );
 };

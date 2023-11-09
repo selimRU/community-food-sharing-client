@@ -1,16 +1,29 @@
 import { Link } from "react-router-dom";
 import UseAuth from "../../hooks/UseAuth";
 import FeatureFoodsCard from "./FeatureFoodsCard";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 const FeatureFoods = () => {
-    const { featureFoods } = UseAuth()
+    const [featureFoods, setFeatureFoods] = useState([])
+    // const { featureFoods } = UseAuth()
+
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/v1/availableFoods')
+            .then(res => {
+                if (res.data) {
+                    setFeatureFoods(res.data)
+                }
+            })
+    }, [])
     return (
         <div className="max-w-7xl mx-auto my-10">
             <h3 className=" text-4xl rancho text-center font-semibold text-blue-400 border-b-2 border-blue-300 py-3">Featured Foods</h3>
             <div className=" grid md:grid-cols-2 lg:grid-cols-3 justify-between items-center gap-5 my-10 ">
                 {
-                    featureFoods?.map(food => <FeatureFoodsCard
+                    featureFoods?.slice(0, 6).map(food => <FeatureFoodsCard
                         key={food._id}
                         food={food}
                     ></FeatureFoodsCard>)

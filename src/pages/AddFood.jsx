@@ -16,14 +16,14 @@ const AddFood = () => {
     const [expiredTime, setExpiredTime] = useState('')
     const [pickLocation, setPickLocation] = useState('')
     const [additionalNotes, setAdditionalNotes] = useState('')
-
     const { user } = UseAuth()
     console.log(user);
     const donatorName = user?.displayName
+    console.log(donatorName);
     const donatorImage = user?.photoURL
 
     const email = user?.email
-
+console.log(email);
     const newFood = {
         Food_Name: foodName,
         Food_Image: foodImage,

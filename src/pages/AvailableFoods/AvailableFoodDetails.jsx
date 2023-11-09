@@ -11,7 +11,7 @@ const AvailableFoodDetails = () => {
     const availableFood = useLoaderData()
 
     console.log(availableFood);
-    const { _id, Food_Image, Additional_Notes, Donator, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = availableFood;
+    const { _id, Food_Image, Additional_Notes, Donator_Name, Donator_Image,Donator_Email, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = availableFood;
 
     const [openModal, setOpenModal] = useState(false);
 
@@ -51,11 +51,11 @@ const AvailableFoodDetails = () => {
             </div>
             <div className="flex items-center justify-between">
                 <span className=" font-semibold ralway text-gray-900 dark:text-white">Donator's name</span>
-                <p className=' ralway text-start'>{Donator.Name}</p>
+                <p className=' ralway text-start'>{Donator_Name}</p>
             </div>
             <div className="flex items-center justify-between">
                 <span className=" font-semibold ralway text-gray-900 dark:text-white">Donator's image</span>
-                <img className=' w-[50px] h-[50px] rounded-full' src={Donator.Image} alt="" />
+                <img className=' w-[50px] h-[50px] rounded-full' src={Donator_Image} alt="" />
             </div>
             <Button onClick={() => setOpenModal(true)}>Request</Button>
             <Modal show={openModal} size="6xl" className=" h-[600px]" onClose={onCloseModal} popup>
@@ -63,9 +63,11 @@ const AvailableFoodDetails = () => {
                 <Modal.Body>
                     <h3 className="text-xl font-medium text-gray-900 dark:text-white">Request for Food</h3>
                     <RequestForm
+                        Donator_Email={Donator_Email}
                         Food_Image={Food_Image}
                         Additional_Notes={Additional_Notes}
-                        Donator={Donator}
+                        Donator_Name={Donator_Name}
+                        Donator_Image={Donator_Image}
                         Expired_Date={Expired_Date}
                         Food_Name={Food_Name}
                         Food_Quantity={Food_Quantity}

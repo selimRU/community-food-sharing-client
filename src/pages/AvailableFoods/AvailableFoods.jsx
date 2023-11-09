@@ -17,7 +17,7 @@ const AvailableFoods = () => {
     const totalPages = Math.ceil(count/ size)
     console.log(totalPages);
 
-    console.log(count);
+    console.log(availableFoods);
 
     // available foods
     useEffect(() => {

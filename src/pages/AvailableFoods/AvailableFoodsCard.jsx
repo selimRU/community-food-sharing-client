@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const AvailableFoodsCard = ({ food }) => {
     const navigate = useNavigate()
-    const { _id, Food_Image, Additional_Notes, Donator_name,Donator_Image, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = food;
+    const { _id, Food_Image, Additional_Notes, Donator_Name,Donator_Image, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = food;
 
     const handleDetails = () => {
         navigate(`/availableFoodDetails/${_id}`)
@@ -36,7 +36,7 @@ const AvailableFoodsCard = ({ food }) => {
             </div>
             <div className="flex items-center justify-between">
                 <span className=" font-semibold ralway text-gray-900 dark:text-white">Donator's name</span>
-                <p className=' ralway text-start'>{Donator_name}</p>
+                <p className=' ralway text-start'>{Donator_Name}</p>
             </div>
             <div className="flex items-center justify-between">
                 <span className=" font-semibold ralway text-gray-900 dark:text-white">Donator's image</span>
