@@ -38,12 +38,11 @@ const router = createBrowserRouter([
             {
                 path: '/updateFoodsForm/:id',
                 element: <UpdateFoodForm />,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/availableFoods/${params.id}`)
+                loader: ({ params }) => fetch(`https://community-food-sharing-server-side-azure.vercel.app/api/v1/availableFoods/${params.id}`)
             },
             {
                 path: '/manageSingleFood',
                 element: <ManageSingleFood />
-
             },
             {
                 path: '/manageMyFoods',
@@ -52,12 +51,12 @@ const router = createBrowserRouter([
             {
                 path: '/myFoodRequest',
                 element: <PrivateRoutes ><MyFoodRequest /></PrivateRoutes >,
-                loader: () => fetch('http://localhost:5000/api/v1/requestedFoodDisplayed')
+                loader: () => fetch('https://community-food-sharing-server-side-azure.vercel.app/api/v1/requestedFoodDisplayed')
             },
             {
                 path: '/availableFoodDetails/:id',
                 element: <PrivateRoutes ><AvailableFoodDetails /></PrivateRoutes >,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/availableFoods/${params.id}`)
+                loader: ({ params }) => fetch(`https://community-food-sharing-server-side-azure.vercel.app/api/v1/availableFoods/${params.id}`)
             },
             {
                 path: '/about',

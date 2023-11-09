@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const ManageMyFood = () => {
     const [requestFoods, setRequestFoods] = useState([])
-    console.log(requestFoods);
+    // console.log(requestFoods);
     const { user } = UseAuth()
     console.log(user);
 
@@ -43,7 +43,7 @@ const ManageMyFood = () => {
         ),
     };
     const handleDeleteFoods = (id) => {
-        axios.delete(`http://localhost:5000/api/v1/deleteFoodByDonator/${id}`)
+        axios.delete(`https://community-food-sharing-server-side-azure.vercel.app/api/v1/deleteFoodByDonator/${id}`,{ withCredential: true })
             .then(res => {
                 if (res.data.deletedCount > 0) {
                     if (res.data.deletedCount > 0) {
@@ -75,7 +75,7 @@ const ManageMyFood = () => {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/availableFoods')
+        axios.get('https://community-food-sharing-server-side-azure.vercel.app/api/v1/availableFoods')
             .then(res => {
                 console.log(res.data);
                 if (res.data) {

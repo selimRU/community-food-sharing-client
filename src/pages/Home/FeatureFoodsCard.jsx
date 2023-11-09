@@ -1,7 +1,13 @@
 import { Card } from 'flowbite-react';
+import { useNavigate } from 'react-router-dom';
 
 const FeatureFoodsCard = ({ food }) => {
-    const { Food_Image, Additional_Notes, Donator_Name, Donator_Image, Expired_Time, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = food;
+    const navigate = useNavigate()
+    const {_id, Food_Image, Additional_Notes, Donator_Name, Donator_Image, Expired_Time, Food_Name, Food_Quantity, Food_Status, Pickup_Location } = food;
+
+    const handleDetails = () => {
+        navigate(`/availableFoodDetails/${_id}`)
+    }
     return (
         <Card
             className="max-w-sm"
@@ -39,7 +45,7 @@ const FeatureFoodsCard = ({ food }) => {
                 <span className=" font-semibold ralway text-gray-900 dark:text-white">Donator's image</span>
                 <img className=' w-[50px] h-[50px] rounded-full' src={Donator_Image} alt="" />
             </div>
-            <button
+            <button onClick={handleDetails}
                 className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
             >
                 Details

@@ -3,6 +3,7 @@ import AvailableFoodsCard from "./AvailableFoodsCard";
 import axios from "axios";
 import UseAuth from "../../hooks/UseAuth";
 import { RotatingLines } from "react-loader-spinner";
+import { linkWithCredential } from "firebase/auth";
 
 
 const AvailableFoods = () => {
@@ -14,14 +15,14 @@ const AvailableFoods = () => {
     const [size, setSize] = useState(6)
     const [sortOrder, setSortOrder] = useState('asc');
 
-    const totalPages = Math.ceil(count/ size)
+    const totalPages = Math.ceil(count / size)
     console.log(totalPages);
 
     console.log(availableFoods);
 
     // available foods
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/v1/availableFoods?page=${pageNumber}&size=${size}}`)
+        axios.get(`https://community-food-sharing-server-side-azure.vercel.app/api/v1/availableFoods?page=${pageNumber}&size=${size}}`, { withCredential: true })
             .then(res => {
                 console.log(res.data);
                 setAvailableFoods(res.data)

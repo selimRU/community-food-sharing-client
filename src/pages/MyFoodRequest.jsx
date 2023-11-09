@@ -11,7 +11,7 @@ const MyFoodRequest = () => {
     console.log(requFood);
 
     const handleDeleteRequestFood = (id) => {
-        axios.delete(`http://localhost:5000/api/v1/requestedFoodDelete/${id}`)
+        axios.delete(`https://community-food-sharing-server-side-azure.vercel.app/api/v1/requestedFoodDelete/${id}`,{ withCredential: true })
             .then(res => {
 
                 if (res.data.deletedCount > 0) {

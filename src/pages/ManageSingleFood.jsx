@@ -13,7 +13,7 @@ const ManageSingleFood = () => {
     const filteredRequFood = requFood.filter(food => food.Donator_Email === user?.email)
     console.log(filteredRequFood);
     useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/requestedFoodDisplayed')
+        axios.get('https://community-food-sharing-server-side-azure.vercel.app/api/v1/requestedFoodDisplayed',{ withCredential: true })
             .then(res => {
                 if (res.data) {
                     setrRequFood(res.data)
@@ -21,6 +21,7 @@ const ManageSingleFood = () => {
 
             })
     }, [])
+    
     return (
         <div className=' grid md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto '>
             {

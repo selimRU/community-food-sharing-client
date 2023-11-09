@@ -15,7 +15,7 @@ const ContextProvider = ({ children }) => {
 
     // available foods count
     useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/count/availableFoodsCount')
+        axios.get('https://community-food-sharing-server-side-azure.vercel.app/api/v1/count/availableFoodsCount',{ withCredential: true })
             .then(res => {
                 console.log(res.data.count);
                 if (res.data.count) {
@@ -28,7 +28,7 @@ const ContextProvider = ({ children }) => {
     // faetureFoods
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/featureFood')
+        axios.get('https://community-food-sharing-server-side-azure.vercel.app/api/v1/availableFoods',{ withCredential: true })
             .then(res => {
                 setFeatureFoods(res.data)
             })

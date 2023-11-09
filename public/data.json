@@ -6,11 +6,9 @@
         "Pickup_Location": "444 Pine Road",
         "Expired_Date": "2023-12-08",
         "Additional_Notes": "Ripe and delicious peaches",
-        "Donator": {
-            "Image": "donator29.jpg",
-            "Name": "Scarlett Adams",
-            "Email": "scarlett@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -20,11 +18,9 @@
         "Pickup_Location": "555 Cedar Lane",
         "Expired_Date": "2023-11-30",
         "Additional_Notes": "Canned pink salmon",
-        "Donator": {
-            "Image": "donator30.jpg",
-            "Name": "James Hall",
-            "Email": "james@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -34,11 +30,9 @@
         "Pickup_Location": "789 Elm Street",
         "Expired_Date": "2023-11-22",
         "Additional_Notes": "Classic mac and cheese",
-        "Donator": {
-            "Image": "donator31.jpg",
-            "Name": "Liam White",
-            "Email": "liam@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -48,11 +42,9 @@
         "Pickup_Location": "101 Pine Road",
         "Expired_Date": "2023-11-26",
         "Additional_Notes": "Purified drinking water",
-        "Donator": {
-            "Image": "donator32.jpg",
-            "Name": "Mia Moore",
-            "Email": "mia@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -62,11 +54,9 @@
         "Pickup_Location": "222 Birch Street",
         "Expired_Date": "2023-12-01",
         "Additional_Notes": "Canned beef chunks",
-        "Donator": {
-            "Image": "donator33.jpg",
-            "Name": "Daniel Wilson",
-            "Email": "daniel@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -76,11 +66,9 @@
         "Pickup_Location": "333 Oak Avenue",
         "Expired_Date": "2023-11-29",
         "Additional_Notes": "Assorted frozen fish",
-        "Donator": {
-            "Image": "donator34.jpg",
-            "Name": "Olivia Turner",
-            "Email": "olivia@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -90,11 +78,9 @@
         "Pickup_Location": "123 Elm Street",
         "Expired_Date": "2023-12-02",
         "Additional_Notes": "Juicy and sweet oranges",
-        "Donator": {
-            "Image": "donator13.jpg",
-            "Name": "Aiden Hall",
-            "Email": "aiden@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -104,11 +90,9 @@
         "Pickup_Location": "456 Oak Avenue",
         "Expired_Date": "2023-12-12",
         "Additional_Notes": "Assorted canned beans",
-        "Donator": {
-            "Image": "donator14.jpg",
-            "Name": "Scarlett Parker",
-            "Email": "scarlett@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -118,11 +102,9 @@
         "Pickup_Location": "789 Pine Road",
         "Expired_Date": "2023-11-18",
         "Additional_Notes": "Classic tomato sauce",
-        "Donator": {
-            "Image": "donator15.jpg",
-            "Name": "James Young",
-            "Email": "james@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -132,11 +114,9 @@
         "Pickup_Location": "101 Cedar Lane",
         "Expired_Date": "2023-11-22",
         "Additional_Notes": "Freshly baked bread",
-        "Donator": {
-            "Image": "donator16.jpg",
-            "Name": "Mia Scott",
-            "Email": "mia@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -146,11 +126,9 @@
         "Pickup_Location": "222 Birch Street",
         "Expired_Date": "2023-12-10",
         "Additional_Notes": "Various cereal types",
-        "Donator": {
-            "Image": "donator17.jpg",
-            "Name": "Daniel King",
-            "Email": "daniel@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -160,11 +138,9 @@
         "Pickup_Location": "333 Spruce Lane",
         "Expired_Date": "2023-11-20",
         "Additional_Notes": "Smooth peanut butter",
-        "Donator": {
-            "Image": "donator18.jpg",
-            "Name": "Emily Turner",
-            "Email": "emily@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -174,11 +150,9 @@
         "Pickup_Location": "444 Elm Street",
         "Expired_Date": "2023-11-25",
         "Additional_Notes": "Ripe and ready to eat",
-        "Donator": {
-            "Image": "donator7.jpg",
-            "Name": "Ella Davis",
-            "Email": "ella@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -188,11 +162,9 @@
         "Pickup_Location": "555 Oak Avenue",
         "Expired_Date": "2023-11-29",
         "Additional_Notes": "Mixed vegetables in cans",
-        "Donator": {
-            "Image": "donator8.jpg",
-            "Name": "Michael White",
-            "Email": "michael@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -202,11 +174,9 @@
         "Pickup_Location": "666 Pine Road",
         "Expired_Date": "2023-12-03",
         "Additional_Notes": "Classic chicken noodle soup",
-        "Donator": {
-            "Image": "donator9.jpg",
-            "Name": "Sophia Moore",
-            "Email": "sophia@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -216,12 +186,9 @@
         "Pickup_Location": "777 Cedar Lane",
         "Expired_Date": "2023-11-23",
         "Additional_Notes": "Fresh cow's milk",
-        "Donator": {
-            "Image": "donator10.jpg",
-            "Name": "Liam Clark",
-            "Email": "liam@example.com"
-        },
-        "Food_Status": "available"
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":""
     },
     {
         "Food_Name": "Canned Fruit",
@@ -230,11 +197,9 @@
         "Pickup_Location": "888 Birch Street",
         "Expired_Date": "2023-12-08",
         "Additional_Notes": "Assorted canned fruits",
-        "Donator": {
-            "Image": "donator11.jpg",
-            "Name": "Olivia Lewis",
-            "Email": "olivia@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -244,11 +209,9 @@
         "Pickup_Location": "999 Spruce Lane",
         "Expired_Date": "2023-11-28",
         "Additional_Notes": "Variety of pizza flavors",
-        "Donator": {
-            "Image": "donator12.jpg",
-            "Name": "Noah Turner",
-            "Email": "noah@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -258,11 +221,9 @@
         "Pickup_Location": "123 Main Street",
         "Expired_Date": "2023-12-01",
         "Additional_Notes": "Organic, no pesticides",
-        "Donator": {
-            "Image": "donator1.jpg",
-            "Name": "John Doe",
-            "Email": "john@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -272,11 +233,9 @@
         "Pickup_Location": "456 Elm Street",
         "Expired_Date": "2023-11-15",
         "Additional_Notes": "Assorted flavors",
-        "Donator": {
-            "Image": "donator2.jpg",
-            "Name": "Jane Smith",
-            "Email": "jane@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -286,11 +245,9 @@
         "Pickup_Location": "789 Oak Avenue",
         "Expired_Date": "2023-11-30",
         "Additional_Notes": "Long-grain white rice",
-        "Donator": {
-            "Image": "donator3.jpg",
-            "Name": "Alice Johnson",
-            "Email": "alice@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -300,11 +257,9 @@
         "Pickup_Location": "101 Pine Road",
         "Expired_Date": "2023-12-05",
         "Additional_Notes": "Variety of pasta types",
-        "Donator": {
-            "Image": "donator4.jpg",
-            "Name": "Robert Brown",
-            "Email": "robert@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -314,11 +269,9 @@
         "Pickup_Location": "222 Cedar Lane",
         "Expired_Date": "2023-11-20",
         "Additional_Notes": "Mix of seasonal vegetables",
-        "Donator": {
-            "Image": "donator5.jpg",
-            "Name": "Mary Wilson",
-            "Email": "mary@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -328,11 +281,9 @@
         "Pickup_Location": "333 Birch Street",
         "Expired_Date": "2023-12-10",
         "Additional_Notes": "In water, low sodium",
-        "Donator": {
-            "Image": "donator6.jpg",
-            "Name": "David Lee",
-            "Email": "david@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -342,11 +293,9 @@
         "Pickup_Location": "444 Cedar Lane",
         "Expired_Date": "2023-12-04",
         "Additional_Notes": "Sweet and juicy strawberries",
-        "Donator": {
-            "Image": "donator19.jpg",
-            "Name": "Ethan Harris",
-            "Email": "ethan@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -356,11 +305,9 @@
         "Pickup_Location": "555 Spruce Lane",
         "Expired_Date": "2023-11-24",
         "Additional_Notes": "Whole kernel corn",
-        "Donator": {
-            "Image": "donator20.jpg",
-            "Name": "Madison Martinez",
-            "Email": "madison@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -370,11 +317,9 @@
         "Pickup_Location": "666 Elm Street",
         "Expired_Date": "2023-12-09",
         "Additional_Notes": "Variety of oatmeal flavors",
-        "Donator": {
-            "Image": "donator21.jpg",
-            "Name": "Liam Brown",
-            "Email": "liam@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -384,11 +329,9 @@
         "Pickup_Location": "777 Pine Road",
         "Expired_Date": "2023-11-26",
         "Additional_Notes": "Assorted yogurt flavors",
-        "Donator": {
-            "Image": "donator22.jpg",
-            "Name": "Sophia Davis",
-            "Email": "sophia@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -398,11 +341,9 @@
         "Pickup_Location": "888 Elm Street",
         "Expired_Date": "2023-12-11",
         "Additional_Notes": "Canned chicken meat",
-        "Donator": {
-            "Image": "donator23.jpg",
-            "Name": "Jackson Wilson",
-            "Email": "jackson@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -412,11 +353,9 @@
         "Pickup_Location": "999 Oak Avenue",
         "Expired_Date": "2023-11-22",
         "Additional_Notes": "Mix of frozen vegetables",
-        "Donator": {
-            "Image": "donator24.jpg",
-            "Name": "Olivia Smith",
-            "Email": "olivia@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -426,11 +365,9 @@
         "Pickup_Location": "123 Birch Street",
         "Expired_Date": "2023-11-27",
         "Additional_Notes": "Vine-ripened tomatoes",
-        "Donator": {
-            "Image": "donator25.jpg",
-            "Name": "Noah Lee",
-            "Email": "noah@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -440,11 +377,9 @@
         "Pickup_Location": "456 Cedar Lane",
         "Expired_Date": "2023-11-25",
         "Additional_Notes": "Canned pork with gravy",
-        "Donator": {
-            "Image": "donator26.jpg",
-            "Name": "Ava Turner",
-            "Email": "ava@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -454,11 +389,9 @@
         "Pickup_Location": "555 Elm Street",
         "Expired_Date": "2023-12-05",
         "Additional_Notes": "Farm-fresh eggs",
-        "Donator": {
-            "Image": "donator27.jpg",
-            "Name": "Ethan Davis",
-            "Email": "ethan@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     },
     {
@@ -468,11 +401,9 @@
         "Pickup_Location": "789 Pine Road",
         "Expired_Date": "2023-11-28",
         "Additional_Notes": "Canned tofu protein",
-        "Donator": {
-            "Image": "donator28.jpg",
-            "Name": "Avery Harris",
-            "Email": "avery@example.com"
-        },
+        "Donator_Email": "ff",
+        "Donator_Image":"",
+        "Donator_Name":"",
         "Food_Status": "available"
     }
 ]

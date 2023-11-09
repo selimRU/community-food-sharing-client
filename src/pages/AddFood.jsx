@@ -23,7 +23,7 @@ const AddFood = () => {
     const donatorImage = user?.photoURL
 
     const email = user?.email
-console.log(email);
+    console.log(email);
     const newFood = {
         Food_Name: foodName,
         Food_Image: foodImage,
@@ -38,7 +38,7 @@ console.log(email);
     }
     const handleAddFood = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:5000/api/v1/availableFoodsAdd', newFood)
+        axios.post('https://community-food-sharing-server-side-azure.vercel.app/api/v1/availableFoodsAdd', newFood, { withCredential: true })
             .then(res => {
                 if (res.data.insertedId) {
                     toast('Successfully added food')

@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
 
 const Nav = () => {
-    const { user, logIn, logOut, } = UseAuth()
+    const { user, logOut, } = UseAuth()
 
     const handleLogOut = (email, password) => {
         logOut()

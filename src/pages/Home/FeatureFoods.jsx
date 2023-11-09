@@ -11,7 +11,7 @@ const FeatureFoods = () => {
 
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/v1/availableFoods')
+        axios.get('https://community-food-sharing-server-side-azure.vercel.app/api/v1/availableFoods',{ withCredential: true })
             .then(res => {
                 if (res.data) {
                     setFeatureFoods(res.data)

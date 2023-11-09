@@ -9,7 +9,7 @@ import { Button, Label, TextInput } from "flowbite-react";
 
 const UpdateFoodForm = () => {
     const managedFood = useLoaderData()
-    console.log(managedFood);
+    // console.log(managedFood);
     const { _id, Food_Image, Additional_Notes, Donator_Email, Donator_Image, Donator_Name, Expired_Date, Food_Name, Food_Quantity, Food_Status, Pickup_Location, Donated_Money } = managedFood
 
     const newFood = {
@@ -26,11 +26,12 @@ const UpdateFoodForm = () => {
 
     const handleUpdate = (e) => {
         e.preventDefault()
-        axios.put(`http://localhost:5000/api/v1/updateFoodByDonator/${_id}`, newFood)
+        axios.put(`https://community-food-sharing-server-side-azure.vercel.app/api/v1/updateFoodByDonator/${_id}`, newFood,{ withCredential: true })
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
                     toast('Updated successfully')
+                    
                 }
                 
             }).catch(error=>{
