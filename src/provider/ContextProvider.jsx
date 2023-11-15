@@ -9,13 +9,30 @@ const ContextProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const [featureFoods, setFeatureFoods] = useState([])
-
+    const [theme, setTheme] = useState('light')
     // const [manageFoods, setManageFoods] = useState([])
     const [count, setCount] = useState(0)
 
+    // theme
+    useEffect(() => {
+        const storedTheme = localStorage.getItem('theme')
+        if (storedTheme) {
+            setTheme(storedTheme)
+            document.body.setAttribute('data-theme', storedTheme)
+        }
+    }, [])
+
+    const handleToggleTheme = () => {
+        const newTheme = theme === 'dark' ? 'light' : 'dark'
+        setTheme(newTheme)
+        localStorage.setItem('theme', newTheme);
+        // Update the theme on the document.body
+        document.body.setAttribute('data-theme', newTheme);
+    }
+
     // available foods count
     useEffect(() => {
-        axios.get('https://community-food-sharing-server-side-azure.vercel.app/api/v1/count/availableFoodsCount',{ withCredential: true })
+        axios.get('https://community-food-sharing-server-side-azure.vercel.app/api/v1/count/availableFoodsCount', { withCredential: true })
             .then(res => {
                 console.log(res.data.count);
                 if (res.data.count) {
@@ -28,7 +45,7 @@ const ContextProvider = ({ children }) => {
     // faetureFoods
 
     useEffect(() => {
-        axios.get('https://community-food-sharing-server-side-azure.vercel.app/api/v1/availableFoods',{ withCredential: true })
+        axios.get('https://community-food-sharing-server-side-azure.vercel.app/api/v1/availableFoods', { withCredential: true })
             .then(res => {
                 setFeatureFoods(res.data)
             })
@@ -81,7 +98,9 @@ const ContextProvider = ({ children }) => {
         user,
         loading,
         featureFoods,
-        count
+        count,
+        theme,
+        handleToggleTheme
     }
     return (
         <Context.Provider value={values}>

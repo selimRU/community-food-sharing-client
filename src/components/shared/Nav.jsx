@@ -1,11 +1,13 @@
 import { Avatar, Navbar, Button } from 'flowbite-react';
 import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../../hooks/UseAuth';
-
+import { FaMoon } from "react-icons/fa6";
+import { IoSunny } from "react-icons/io5";
+import { DarkThemeToggle } from 'flowbite-react';
 const Nav = () => {
-    const { user, logOut, } = UseAuth()
+    const { user, logOut, theme, handleToggleTheme } = UseAuth()
 
-    const handleLogOut = (email, password) => {
+    const handleLogOut = () => {
         logOut()
     }
     return (
@@ -24,6 +26,12 @@ const Nav = () => {
                 {user ? <button onClick={handleLogOut} className=' text-xs lg:text-lg md:text-xs rounded-md bg-blue-300 px-2 md:px-2 lg:px-3 py-2' >Log Out</button> :
                     <Link to={'/logIn'}><button color="blue">Log In</button></Link>}
                 <Navbar.Toggle />
+                {/* <button onClick={handleToggleTheme}>
+                    {theme === 'dark' ? <IoSunny className=' text-2xl' /> : < FaMoon className=' text-2xl' />}
+                </button> */}
+
+                <DarkThemeToggle />
+
             </div>
             <Navbar.Collapse>
                 <div className=' flex flex-col md:flex-row lg:flex-row md:gap-[15px] lg:text-base lg:gap-5'>
